@@ -1,5 +1,5 @@
 # Scripts  
-my cool scripts  
+just a few wird stuFF  
   
 # Universal Esp  
 Updated September 5, 2021  
