@@ -35,9 +35,12 @@ local Logo_2 = Instance.new("ImageLabel")
 local TextLabel_7 = Instance.new("TextLabel")
 local TextLabel_8 = Instance.new("TextLabel")
 local Games = Instance.new("TextButton")
-local File = Instance.new("TextButton")
+local lFile = Instance.new("TextButton")
 local HotScripts = Instance.new("TextButton")
 local Other = Instance.new("TextButton")
+local Frame_2 = Instance.new("Frame")
+local TextLabel_9 = Instance.new("TextLabel")
+local TextLabel_10 = Instance.new("TextLabel")
 local Open = Instance.new("Frame")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -51,7 +54,7 @@ KRNLInternal.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Frame.Parent = KRNLInternal
 Frame.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Frame.LayoutOrder = 1
-Frame.Position = UDim2.new(0.457302004, 0, 0.258641183, 0)
+Frame.Position = UDim2.new(0.426980227, 0, 0.302741319, 0)
 Frame.Size = UDim2.new(0, 687, 0, 319)
 Frame.ZIndex = 2
 
@@ -178,6 +181,7 @@ Editor.Parent = Frame
 Editor.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Editor.Position = UDim2.new(0.0131004369, 0, 0.163563132, 0)
 Editor.Size = UDim2.new(0, 547, 0, 229)
+Editor.Visible = false
 Editor.ClearTextOnFocus = false
 Editor.Font = Enum.Font.Code
 Editor.MultiLine = true
@@ -335,16 +339,16 @@ Games.Text = "Games"
 Games.TextColor3 = Color3.fromRGB(255, 255, 255)
 Games.TextSize = 14.000
 
-File.Name = "File"
-File.Parent = OtherThing
-File.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
-File.BorderSizePixel = 0
-File.Position = UDim2.new(0.023, 0, 0, 0)
-File.Size = UDim2.new(0, 83, 0, 9)
-File.Font = Enum.Font.SourceSans
-File.Text = "File"
-File.TextColor3 = Color3.fromRGB(255, 255, 255)
-File.TextSize = 14.000
+lFile.Name = "lFile"
+lFile.Parent = OtherThing
+lFile.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+lFile.BorderSizePixel = 0
+lFile.Position = UDim2.new(0.023, 0, 0, 0)
+lFile.Size = UDim2.new(0, 83, 0, 9)
+lFile.Font = Enum.Font.SourceSans
+lFile.Text = "File"
+lFile.TextColor3 = Color3.fromRGB(255, 255, 255)
+lFile.TextSize = 14.000
 
 HotScripts.Name = "Hot-Scripts"
 HotScripts.Parent = OtherThing
@@ -368,6 +372,36 @@ Other.Text = "Other"
 Other.TextColor3 = Color3.fromRGB(255, 255, 255)
 Other.TextSize = 14.000
 
+Frame_2.Parent = Other
+Frame_2.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+Frame_2.BorderColor3 = Color3.fromRGB(47, 47, 47)
+Frame_2.BorderSizePixel = 3
+Frame_2.Position = UDim2.new(0.337349385, 0, 1.77777779, 0)
+Frame_2.Size = UDim2.new(0, 173, 0, 49)
+Frame_2.Visible = false
+
+TextLabel_9.Parent = Frame_2
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.BackgroundTransparency = 1.000
+TextLabel_9.Position = UDim2.new(0.0705882385, 0, 0, 0)
+TextLabel_9.Size = UDim2.new(0, 134, 0, 31)
+TextLabel_9.Font = Enum.Font.SourceSans
+TextLabel_9.Text = "Get Key"
+TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.TextSize = 14.000
+TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_10.Parent = Frame_2
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.BackgroundTransparency = 1.000
+TextLabel_10.Position = UDim2.new(0.0705882385, 0, 0.117453553, 0)
+TextLabel_10.Size = UDim2.new(0, 134, 0, 49)
+TextLabel_10.Font = Enum.Font.SourceSans
+TextLabel_10.Text = "Join Discord Server"
+TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.TextSize = 14.000
+TextLabel_10.TextXAlignment = Enum.TextXAlignment.Left
+
 Open.Name = "Open"
 Open.Parent = KRNLInternal
 Open.Active = true
@@ -387,23 +421,38 @@ UICorner.Parent = Open
 
 -- Scripts:
 
-local function RNHIWRY_fake_script() -- Clear.LocalScript 
+local function JWURIHX_fake_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Editor.Text = ""
 	end)
 end
-coroutine.wrap(RNHIWRY_fake_script)()
-local function FTTVV_fake_script() -- Execute.LocalScript 
+coroutine.wrap(JWURIHX_fake_script)()
+local function ZGQF_fake_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(script.Parent.Parent.Editor.Text)()
 	end)
 end
-coroutine.wrap(FTTVV_fake_script)()
-local function NMPXIT_fake_script() -- Close.LocalScript 
+coroutine.wrap(ZGQF_fake_script)()
+local function BBMOBUK_fake_script() -- Minimize.LocalScript 
+	local script = Instance.new('LocalScript', Minimize)
+
+	local k = script.Parent.Parent.Parent.Frame
+	local Ico = script.Parent.Parent.Parent.Open.ImageButton
+	local Open = script.Parent.Parent.Parent.Open
+	script.Parent.MouseButton1Click:Connect(function()
+		k:TweenPosition(UDim2.new(0.184, 0, 0.957, 0),"In","Quad",0.5,false)
+		k.Visible = false
+		Open.Visible = true
+		Ico.Visible = true
+		Ico:TweenPosition(UDim2.new(0.07, 0, 0.097, 0),"In","Linear",0.5,false)
+	end)
+end
+coroutine.wrap(BBMOBUK_fake_script)()
+local function ZXRCCGP_fake_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	local KRNLInternal = script.Parent.Parent.Parent
@@ -411,8 +460,8 @@ local function NMPXIT_fake_script() -- Close.LocalScript
 		KRNLInternal:Destroy()
 	end)
 end
-coroutine.wrap(NMPXIT_fake_script)()
-local function WVIHU_fake_script() -- Frame.LocalScript 
+coroutine.wrap(ZXRCCGP_fake_script)()
+local function RNZJMJ_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	local dragger = {}
@@ -455,8 +504,8 @@ local function WVIHU_fake_script() -- Frame.LocalScript
 	end
 	dragger.new(script.Parent)
 end
-coroutine.wrap(WVIHU_fake_script)()
-local function DIBTPKS_fake_script() -- Credits.LocalScript 
+coroutine.wrap(RNZJMJ_fake_script)()
+local function PLTWTB_fake_script() -- Credits.LocalScript 
 	local script = Instance.new('LocalScript', Credits)
 
 	local credits = script.Parent.Credits
@@ -465,8 +514,8 @@ local function DIBTPKS_fake_script() -- Credits.LocalScript
 		credits:TweenPosition(UDim2.new(-6.361, 0, -3.111, 0),"In","Quad",0.5,false)
 	end)
 end
-coroutine.wrap(DIBTPKS_fake_script)()
-local function VGNIYUO_fake_script() -- Close_2.LocalScript 
+coroutine.wrap(PLTWTB_fake_script)()
+local function JUSNX_fake_script() -- Close_2.LocalScript 
 	local script = Instance.new('LocalScript', Close_2)
 
 	local KRNLInternal = script.Parent.Parent.Parent
@@ -476,23 +525,22 @@ local function VGNIYUO_fake_script() -- Close_2.LocalScript
 		KRNLInternal.Visible = false
 	end)
 end
-coroutine.wrap(VGNIYUO_fake_script)()
-local function HZBXO_fake_script() -- OtherThing.LocalScript 
-	local script = Instance.new('LocalScript', OtherThing)
+coroutine.wrap(JUSNX_fake_script)()
+local function OPPGYR_fake_script() -- Other.LocalScript 
+	local script = Instance.new('LocalScript', Other)
 
-	local k = script.Parent.Parent.Parent.Frame
-	local Ico = script.Parent.Parent.Parent.Open.ImageButton
-	local Open = script.Parent.Parent.Parent.Open
-	script.Parent.MouseButton1Click:Connect(function()
-		k:TweenPosition(UDim2.new(0.184, 0, 0.957, 0),"In","Quad",0.5,false)
-		k.Visible = false
-		Open.Visible = true
-		Ico.Visible = true
-		Ico:TweenPosition(UDim2.new(0.07, 0, 0.097, 0),"In","Linear",0.5,false)
+	local I = script.Parent.Frame
+	script.Parent.MouseEnter:Connect(function()
+	  I.Visible = true
 	end)
+	
+	script.Parent.MouseLeave:Connect(function()
+		I.Visible = false
+	end)
+	
 end
-coroutine.wrap(HZBXO_fake_script)()
-local function KDWVOXK_fake_script() -- ImageButton.LocalScript 
+coroutine.wrap(OPPGYR_fake_script)()
+local function KFQNTG_fake_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	local K = script.Parent.Parent.Parent.Frame
@@ -508,4 +556,4 @@ local function KDWVOXK_fake_script() -- ImageButton.LocalScript
 		
 	end)
 end
-coroutine.wrap(KDWVOXK_fake_script)()
+coroutine.wrap(KFQNTG_fake_script)()
